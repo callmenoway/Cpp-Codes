@@ -1,6 +1,6 @@
 
 /********************************************************************************************************************
- * 
+
 Alcune librerie e funzioni potrebbero non essere disponibili su tutti i sistemi operativi.
 Per problemi di compatibilità su linux e altri IDE, la funzione sleep() è stata commentata.
 
