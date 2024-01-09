@@ -9,7 +9,7 @@ Per problemi di compatibilità su linux e altri IDE, la funzione sleep() è stat
 #include <iostream>
 #include <stdlib.h>
 //#include <Windows.h>
-#include<unistd.h>   
+#include <unistd.h>   
 #include <cstdlib>
 #include <bits/stdc++.h>
 #include <algorithm>
