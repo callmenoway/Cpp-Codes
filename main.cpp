@@ -180,43 +180,6 @@ void importDizionario(vocabolario arrayDizionario[], int& nparola) {
     DizionarioTXT.close();
 }
 
-// void visualizzaMenu(int nparola,string& parola,string& searchWord,string& parolaDaSostituire,string& temp,vocabolario arrayDizionario[]) {
-    
-
-        // //add vocaboli
-        // if (selezione == 1) {
-        //     aggiungiVocabolo(nparola, arrayDizionario);
-        //     nparola++;
-        // }
-        // //view vocaboli
-        // else if (selezione == 2) {
-        //     //sleep(3000);
-        //     visualizzaDizionario(nparola, arrayDizionario);
-        // }
-        // //del/modify vocaboli
-        // else if (selezione == 3) {
-        //     editDizionario(nparola, selezione, searchWord, parolaDaSostituire, arrayDizionario);
-        // }
-        // //bubble sort vocaboli
-        // else if (selezione == 4) {
-        //     ordinamentoDizionario(temp, selezione, nparola, arrayDizionario);
-        // }
-        // //esporta dizionario file txt
-        // else if (selezione == 5) {
-        //     exportDizionario(arrayDizionario, nparola);
-        // }
-        // //importa dizionario file txt
-        // else if (selezione == 6) {
-        //     importDizionario(arrayDizionario, nparola);
-        // }
-        // else if (selezione == 7) {
-        //     break;
-        // }        
-        // //nessuno dei casi
-        // else {
-        //     break;
-        // }
-// }
 
 int main() {
     //const int MAX_ARRAY = 100;
@@ -224,16 +187,15 @@ int main() {
     string parola, searchWord, parolaDaSostituire, temp;
     vocabolario arrayDizionario[MAX_ARRAY];
     //menų
-    // visualizzaMenu(nparola, parola, searchWord, parolaDaSostituire, temp, arrayDizionario);
     do {
     cout << R"(
-1. Aggiungere vocaboli al dizionario
-2. Visualizzare dizionario
-3. Modificare o cancellare vocaboli
-4. Ordinare dizionario
-5. Esporta dizionario in dizionario.txt
-6. Importa dizionario da dizionario.txt
-0. Esci
+    1. Aggiungere vocaboli al dizionario
+    2. Visualizzare dizionario
+    3. Modificare o cancellare vocaboli
+    4. Ordinare dizionario
+    5. Esporta dizionario in dizionario.txt
+    6. Importa dizionario da dizionario.txt
+    0. Esci
     )";
     cout << "selezione: ";
     cin >> selezione;
@@ -263,50 +225,5 @@ int main() {
             break;
     }
 } while (selezione);
-
-    // do {
-    //     cout << "1. Aggiungere vocaboli al dizionario\n";
-    //     cout << "2. Visualizzare dizionario\n";
-    //     cout << "3. Modificare o cancellare vocaboli\n";
-    //     cout << "4. Ordinare dizionario\n";
-    //     cout << "5. Esporta dizionario in dizionario.txt\n";
-    //     cout << "6. Importa dizionario da dizionario.txt\n";
-    //     cout << "7. Esci\n";
-    //     cout << "selezione: ";
-    //     cin >> selezione;
-    //     //add vocaboli
-    //     if (selezione == 1) {
-    //         aggiungiVocabolo(nparola, arrayDizionario);
-    //         nparola++;
-    //     }
-    //     //view vocaboli
-    //     else if (selezione == 2) {
-    //         //sleep(3000);
-    //         visualizzaDizionario(nparola, arrayDizionario);
-    //     }
-    //     //del/modify vocaboli
-    //     else if (selezione == 3) {
-    //         editDizionario(nparola, selezione, searchWord, parolaDaSostituire, arrayDizionario);
-    //     }
-    //     //bubble sort vocaboli
-    //     else if (selezione == 4) {
-    //         ordinamentoDizionario(temp, selezione, nparola, arrayDizionario);
-    //     }
-    //     //esporta dizionario file txt
-    //     else if (selezione == 5) {
-    //         exportDizionario(arrayDizionario, nparola);
-    //     }
-    //     //importa dizionario file txt
-    //     else if (selezione == 6) {
-    //         importDizionario(arrayDizionario, nparola);
-    //     }
-    //     else if (selezione == 7) {
-    //         break;
-    //     }        
-    //     //nessuno dei casi
-    //     else {
-    //         break;
-    //     }
-    // } while (true);
     return 0;
 }
