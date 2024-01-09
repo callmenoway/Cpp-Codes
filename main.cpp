@@ -148,35 +148,26 @@ void exportDizionario(vocabolario arrayDizionario[],int nparola) {
     return;
 }
 
-// void importDizionario(vocabolario arrayDizionario[], int nparola) {
-//     ifstream DizionarioTXT;
-//     DizionarioTXT.open("dizionario.txt", ios::in);
-//     string line;
-//     while (getline(DizionarioTXT, line)) {
-//         arrayDizionario[nparola].ita = line.substr(0, line.find("-"));
-//         arrayDizionario[nparola].eng = line.substr(line.find("-") + 1, line.length());
-//         nparola++;
-//     }
-//     cout << "Dizionario importato con successo." << endl;
-//     DizionarioTXT.close();
-//     return;
-// }
-void importDizionario(vocabolario arrayDizionario[], int nparola) {
-    string riga;
-    ofstream mioFile;              //file di input x leggere
-    mioFile.open("dizionario.txt", ios::in); //apre il file in lettura
-    for(int i = 0; i < 1; i++){
-    //mioFile>>parola;            //legge caratteri fino allo spazio o fine riga (una parola)
-    // getline (mioFile, riga);      //legge un'intera riga fino fine riga
-    // getline (cin, riga);
-    arrayDizionario[nparola].ita = riga.substr(0, riga.find("-"));
-    cout << arrayDizionario[nparola].ita << endl;
-    }
-    //cout<<parola;               //la visualizza a video
-   
+void importDizionario(vocabolario arrayDizionario[], int& nparola) {
+    ifstream DizionarioTXT;
+    DizionarioTXT.open("dizionario.txt", ios::in);
 
-    mioFile.close();
-    return;
+    if (!DizionarioTXT) {
+        cerr << "Impossibile trovare il file dizionario.txt";
+        return;
+    }
+
+    string line;
+    while (getline(DizionarioTXT, line)) {
+        size_t pos = line.find('-');
+        if (pos != string::npos) {
+            arrayDizionario[nparola].ita = line.substr(0, pos);
+            arrayDizionario[nparola].eng = line.substr(pos + 1);
+            nparola++;
+        }
+    }
+
+    DizionarioTXT.close();
 }
 
 int main() {
@@ -221,7 +212,9 @@ int main() {
         else if (selezione == 6) {
             importDizionario(arrayDizionario, nparola);
         }
-        
+        else if (selezione == 7) {
+            break;
+        }        
         //nessuno dei casi
         else {
             break;
