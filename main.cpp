@@ -19,16 +19,16 @@ void aggiungiVocabolo(int nparola, vocabolario arrayDizionario[]) {
     cin >> arrayDizionario[nparola].ita;
     cout << "inserire vocabolo in inglese: ";
     cin >> arrayDizionario[nparola].eng;
-    cout << "Vocabolo aggiunto con successo!\n";
+    cout << "Vocabolo aggiunto con successo!\n" << arrayDizionario[nparola].ita << " - " << arrayDizionario[nparola].eng << endl;
     //sleep(3000);
-    system("clear");
+    //system("clear");
     return;
 }
 
 void visualizzaDizionario(int nparola, vocabolario arrayDizionario[]) {
     //caso vocabolario vuoto
     if (nparola == 0) {
-        cout << "Dizionario vuoto";
+        cout << "Dizionario vuoto\n";
         return;
     }
     else {
@@ -134,19 +134,51 @@ void ordinamentoDizionario(string& temp, int selezione, int nparola, vocabolario
     return;
 }
 
-void exportDizionario(int nparola, vocabolario arrayDizionario[]) {
+void exportDizionario(vocabolario arrayDizionario[],int nparola) {
     ofstream DizionarioTXT;
-    DizionarioTXT.open("./dizionario.txt",ios::out);
+    DizionarioTXT.open("dizionario.txt", ios::out);
 
-    for(int i = 0; i < nparola; i++) {
+    for (int i = 0; i < nparola; i++) {
         DizionarioTXT << arrayDizionario[i].ita << "-" << arrayDizionario[i].eng << endl;
         cout << arrayDizionario[i].ita << "-" << arrayDizionario[i].eng << endl;
     }
-    cout << "ciao";
+    cout << "Dizionario esportato con successo." << endl;
     DizionarioTXT.close();
-    cout << "ciao";
+
     return;
 }
+
+// void importDizionario(vocabolario arrayDizionario[], int nparola) {
+//     ifstream DizionarioTXT;
+//     DizionarioTXT.open("dizionario.txt", ios::in);
+//     string line;
+//     while (getline(DizionarioTXT, line)) {
+//         arrayDizionario[nparola].ita = line.substr(0, line.find("-"));
+//         arrayDizionario[nparola].eng = line.substr(line.find("-") + 1, line.length());
+//         nparola++;
+//     }
+//     cout << "Dizionario importato con successo." << endl;
+//     DizionarioTXT.close();
+//     return;
+// }
+void importDizionario(vocabolario arrayDizionario[], int nparola) {
+    string riga;
+    ofstream mioFile;              //file di input x leggere
+    mioFile.open("dizionario.txt", ios::in); //apre il file in lettura
+    for(int i = 0; i < 1; i++){
+    //mioFile>>parola;            //legge caratteri fino allo spazio o fine riga (una parola)
+    // getline (mioFile, riga);      //legge un'intera riga fino fine riga
+    // getline (cin, riga);
+    arrayDizionario[nparola].ita = riga.substr(0, riga.find("-"));
+    cout << arrayDizionario[nparola].ita << endl;
+    }
+    //cout<<parola;               //la visualizza a video
+   
+
+    mioFile.close();
+    return;
+}
+
 int main() {
     const int MAX_ARRAY = 100;
     int selezione, nparola = 0;
@@ -159,6 +191,8 @@ int main() {
         cout << "3. Modificare o cancellare vocaboli\n";
         cout << "4. Ordinare dizionario\n";
         cout << "5. Esporta dizionario in dizionario.txt\n";
+        cout << "6. Importa dizionario da dizionario.txt\n";
+        cout << "7. Esci\n";
         cout << "selezione: ";
         cin >> selezione;
         //add vocaboli
@@ -180,9 +214,14 @@ int main() {
             ordinamentoDizionario(temp, selezione, nparola, arrayDizionario);
         }
         //esporta dizionario file txt
-        else if (selezione == 4) {
-            exportDizionario(nparola, arrayDizionario);
+        else if (selezione == 5) {
+            exportDizionario(arrayDizionario, nparola);
         }
+        //importa dizionario file txt
+        else if (selezione == 6) {
+            importDizionario(arrayDizionario, nparola);
+        }
+        
         //nessuno dei casi
         else {
             break;
