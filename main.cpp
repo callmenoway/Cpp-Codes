@@ -105,7 +105,6 @@ void editDizionario(int nparola, int selezione, string& parolaDaSostituire, stri
     }
 }
 
-
 void ordinamentoDizionario(string& temp, int selezione, int nparola, vocabolario arrayDizionario[]) {
     cout << "Ordinare per italiano = 1, inglese = 2" << endl;
     cout << "selezione: ";
