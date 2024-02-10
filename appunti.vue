@@ -11,7 +11,7 @@ Il decameron è un'opera che rappresenta tre livelli, la supercornice# (composta
 e introduzione alla quarta giornata con la novella). In questi livelli parla della critiche per questo 
 comportamento libertino sull'amore. Il pubblico che legge quest'opera è un pubblico borghese (donne) in crisi d'amore.
 Boccaccio dice che gli amici danno una mano quindi in caso di sofferenza si può parlare con essi per distrarsi.
-Il decameron è un'opera che si divide in 10 giornate, ogni giornata è composta da 100 + 1 novelle.
+Il decameron è un'opera che si divide in 10 giornate,   composta da 100 + 1 novelle.
 La cornice è composta da 7 donne e 3 uomini che si trovano a fuggire dalla peste a firenze e si rifugiano a villa palmieri.
 La cornice è il secondo livello, funzione medievale (viaggio di dante), funzione umanista, di raccordo,  è il racconto dei 10 ragazzi che scappano da firenze e 
 per passare il tempo si raccontano delle storie. La domenica pensavano a lavarsi. La peste nel caso di boccaccio 
@@ -52,7 +52,7 @@ ingegno
 
 supercornice
 -3 parti
-    proemio (si parla degli afflitti per amore [o donne])
+    proemio (si parla degli afflitte per amore [o donne])
     introduzione alla 4 giornata
     conclusione
 cornice (funzione medievale[dare ordine, collegamento] e umanista[ragionare sulle opere])
@@ -67,9 +67,9 @@ novelle
         la natura (frate cipolla[nel personaggio guccio])
 corbaccio
 
-    campionamento
-    quantizzazione
-    codifica
+        campionamento
+        quantizzazione
+        codifica
 
 
 
