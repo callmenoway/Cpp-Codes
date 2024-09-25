@@ -27,7 +27,7 @@ int main()
 
     scambioValori(ptr1, ptr2); //richiamo funzione per scambiare i due puntatori
 
-    //cout << *ptr1 << *ptr2; test per verificare se lo scmabio è avvenuto con successo
+    cout << *ptr1 << *ptr2; //test per verificare se lo scmabio è avvenuto con successo
 
     return 0;
 }

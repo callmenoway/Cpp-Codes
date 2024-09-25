@@ -25,5 +25,6 @@ int main()
 
     cout << inserimentoDati(a, somma);
 
+    delete a;
     return 0;
 }
