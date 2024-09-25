@@ -6,37 +6,35 @@
 using namespace std;
 const int MAX_ARRAY = 5;
 
-void inserimentoDati (int *ptr1) {
+void inserimentoDati (int array1[]) {
     for (int i = 0; i < MAX_ARRAY; i++) {
         cout << "Inserisci valore: ";
-        cin >> *(ptr1 + i);
+        cin >> *(array1 + i);
         cout << endl;
     }
 }
 
-void copia(int *ptr1, int *ptr2) {
+void copia(int array1[], int array2[]) {
     for (int i = 0; i < MAX_ARRAY; i++) {
-        *(ptr2 + i) = *(ptr1 + i);
+        *(array2 + i) = *(array1 + i);
     }
 }
 
 int main() {
-    int array1[MAX_ARRAY];
-    int *ptr1 = array1;
+    int *array1 = new int[MAX_ARRAY];
 
-    int array2[MAX_ARRAY];
-    int *ptr2 = array2;
+    int *array2 = new int[MAX_ARRAY];
 
-    inserimentoDati(ptr1);
+    inserimentoDati(array1);
 
-    copia(ptr1, ptr2);
+    copia(array1, array2);
 
     // for (int i = 0; i < MAX_ARRAY; i++) {
-    //     cout << *(ptr2 + i) << endl;
+    //     cout << *(array2 + i) << endl;
     // }
     
-    delete ptr1;
-    delete ptr2;
+    delete array1;
+    delete array2;
 
     return 0;
 }

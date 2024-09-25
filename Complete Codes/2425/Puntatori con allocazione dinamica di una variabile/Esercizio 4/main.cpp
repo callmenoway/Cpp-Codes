@@ -10,19 +10,31 @@ struct studente {
     int eta;
 };
 
-void inserimentoStudenti(studente *ptr) {
+void inserimentoStudenti(studente *gestionale) {
     for (int i = 0; i < MAX_ARRAY; i++)
     {
         cout << "Inserire il nome dello studente numero " << i << ": ";
-        cin >> (studente + i)->nome;
+        cin >> (gestionale + i)->nome;
+        cout << "Inserire l\'eta\' dello studente numero " << i << ": ";
+        cin >> (gestionale + i)->eta;
     }
-    
+}
+
+void stampa(studente *gestionale) {
+    for (int i = 0; i < MAX_ARRAY; i++)
+    {
+        cout << "Nome: " << (gestionale + i)->nome << endl;
+        cout << "Eta\': " << (gestionale + i)->eta << endl;
+        cout << endl;
+    }
 }
 
 int main() {
-    studente *ptr = new studente[MAX_ARRAY];
+    studente *gestionale = new studente[MAX_ARRAY];
 
-    inserimentoStudenti(ptr);
+    inserimentoStudenti(gestionale);
+    stampa(gestionale);
 
+    delete [] gestionale;
     return 0;
 }
